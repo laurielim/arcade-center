@@ -114,59 +114,54 @@
     <main>
             <div class="section_header_wrapper">
                 <h1> <span>How fast are you?</span> </h1>
-            </div>
-            
+            </div>      
             <section>
-                
                     <div class="big_box">
-                        <div class="settings">
-                            <button class="btn-icon" id="soundOn">
-                              <i class="icon icon-volume-high"></i>
-                            </button>
-                            <button class="btn-icon" id="soundOff">
-                              <i class="icon icon-volume-off"></i>
-                            </button>
-                            <button class="btn-icon btn-icon-cog" id="btnSettings">
-                              <i class="icon icon-cog-outline"></i>
-                            </button>
-                            <form class="levels-setting">
-                              <div class="user-input">
-                                <input
-                                  type="radio"
-                                  name="levels"
-                                  id="lvlOne"
-                                  class="input-lvl"
-                                  checked="checked"
-                                  value="0"
-                                />
-                                <label for="lvlOne">Level 1</label>
-                              </div>
-                              <div class="user-input">
-                                <input
-                                  type="radio"
-                                  name="levels"
-                                  id="lvlTwo"
-                                  class="input-lvl"
-                                  value="1"
-                                />
-                                <label for="lvlTwo">Level 2</label>
-                              </div>
-                              <div class="user-input">
-                                <input
-                                  type="radio"
-                                  name="levels"
-                                  id="lvlThree"
-                                  class="input-lvl"
-                                  value="2"
-                                />
-                                <label for="lvlThree">Level 3</label>
-                              </div>
-                            </form>
+                      <div class="big_box_header" >
+                      <div id="info_button" class="info_button button_hover">i</div>
+                      <div class="settings">
+                        <form class="levels-setting">
+                          <div class="user-input">
+                            <input
+                              type="radio"
+                              name="levels"
+                              id="lvlOne"
+                              class="input-lvl"
+                              checked="checked"
+                              value="0"
+                            />
+                            <label for="lvlOne">Level 1</label>
                           </div>
-                          <div class="scores">
-                            <p>High Score: <span id="highscore">0</span></p>
-                            <p>Your Score: <span id="score">0</span></p>
+                          <div class="user-input">
+                            <input
+                              type="radio"
+                              name="levels"
+                              id="lvlTwo"
+                              class="input-lvl"
+                              value="1"
+                            />
+                            <label for="lvlTwo">Level 2</label>
                           </div>
+                          <div class="user-input">
+                            <input
+                              type="radio"
+                              name="levels"
+                              id="lvlThree"
+                              class="input-lvl"
+                              value="2"
+                            />
+                            <label for="lvlThree">Level 3</label>
+                          </div>
+                        </form>
+                      </div>
+                    
+                    </div>
+                    <div class="big_box_body">
+                      <div class="scores">
+                        <p>High Score: <span id="highscore">0</span></p>
+                        <p>Your Score: <span id="score">0</span></p>
+                      </div>
+                      <section id="game"> 
                           <div class="circles">
                             <button class="circle inactive" value="0"></button>
                             <button class="circle inactive" value="1"></button>
@@ -177,8 +172,10 @@
                             <button class="btn-txt gamepage_button" id="start" type="submit">Start</button>
                             <button class="btn-txt gamepage_button" id="stop" type="submit">Stop</button>
                           </div>
-                        </div>      
+                        </div> 
+                      </section>
                     </div>
+                    <div class="big_box_footer"></div>     
                     <!--  -->
                     <section id="overlay">
                         <div class="popup_base pop_small">
@@ -193,10 +190,32 @@
                           </form>
                           <p id="scoreSaveMsg">Score saved!</p>
                         </div>
-                      </section>
-                
+                        <div id="large_pop" class="popup_base pop_large">
+                          <div id="close_popup" class="popup_close button_hover">X</div>
+
+                          <div class="popup_title">
+                              <h3 id="score"> How to play?</h3>
+                          </div>
+  
+                          <div class="popup_message">
+                              <h4>Game objective:</h4>
+                              <p id="popup_message">Try to stop the bulb in moving lighting bulb when it is on top of the "goal" bulb, highlighted in red color between blue lines.</p>
+  
+                              <h4>Instructions:</h4>
+  
+                              <p> Click the "Start" buttton to get light going and press the "Stop" button to try to stop the light on top of the goal bulb.
+                                  You will be getting one point (+1) for every consecutive time you succed and one minus point (-1) for every failed attempt.
+                                  
+                                  Try to reach the highest score in our leaderboard by successfully stopping the bulb as many times in a row as possible.
+  
+                                  Good luck and have fun!
+                              </p>
+                          </div>
+  
+                          </div>
+                      </div>
+                   </section>
             </section>
-            
             
     </main>
     <div class="section_divider"></div>
@@ -238,11 +257,10 @@
 
     </footer>
     <!-- <div class="section_divider"><i class="far fa-copyright"></i></div> -->
-    
-    <!-- <script src="js/index_script.js"></script> -->
-    <!-- <script src="js/gamepage_script.js"></script> -->
+
     <!-- <script src="./js/main.js"></script> -->
     <script src="./js/speedgame.js"></script>
+    <script src="./js/index_script.js"></script>
 
 </body>
 </html>

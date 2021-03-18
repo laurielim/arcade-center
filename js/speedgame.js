@@ -37,7 +37,7 @@ if (soundOn) {
   btnSoundOn.style.display = "block";
 } else {
   // Show sound off btn
-  btnSoundOff.style.display = "block";
+  // btnSoundOff.style.display = "block";
 }
 
 // Play click sound whenever level is changed if sound is on
@@ -213,33 +213,3 @@ function startGame() {
 
 // Add event listener to start button
 btnStart.addEventListener("click", startGame);
-
-// Toggle levels setting on click
-document
-  .getElementById("btnSettings")
-  .addEventListener("click", () =>
-    document.querySelector(".levels-setting").classList.toggle("responsive")
-  );
-
-// If sound is on...
-btnSoundOn.addEventListener("click", () => {
-  // Set sound on to false
-  soundOn = false;
-  // Pause bg music if playing
-  // if (audioBg) audioBg.pause();
-  // Hide sound on btn
-  btnSoundOn.style.display = "none";
-  // Show sound off btn
-  btnSoundOff.style.display = "block";
-});
-
-// If sound if off...
-btnSoundOff.addEventListener("click", () => {
-  soundOn = true;
-  // Resume bg music if paused
-  // if (audioBg) audioBg.play();
-  // Show sound on btn
-  btnSoundOn.style.display = "block";
-  // Hide sound off btn
-  btnSoundOff.style.display = "none";
-});
