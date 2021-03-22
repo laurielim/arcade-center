@@ -20,6 +20,17 @@ const arrangeBulbsInACircle = (nodes) => {
   });
 };
 /**        END OF EXTRA CODE           */
+let neonlights = document.querySelectorAll("#neonLights div");
+let neonIndex = 0;
+let deco_lights = setInterval(() => {
+  neonlights[neonIndex % 3].classList.toggle("off");
+  neonIndex++;
+  neonlights[neonIndex % 3].classList.toggle("off");
+}, 180);
+
+setTimeout(() => {
+  clearInterval(deco_lights);
+}, 100000);
 
 // group project stuff
 
@@ -59,6 +70,10 @@ scoreTitle.textContent = `Score ${score}`;
 
 // Game code
 const cycloneArcade = () => {
+  clearInterval(deco_lights);
+  neonlights.forEach((light) => {
+    light.classList.remove("off");
+  });
   // Prevent start button from being pressed again
   document.getElementById("start-btn").disabled = true;
   // Allow user to press the stop button
@@ -161,7 +176,7 @@ const cycloneArcade = () => {
       let newSpeed = currentSpeed - 10;
       sessionStorage.setItem("blinkspeed", `${newSpeed}`);
       gameResultWin();
-      audioWin.play();
+      if (soundOn) audioWin.play();
     } else {
       if (score > 0) {
         let currentScore = score;
@@ -171,7 +186,7 @@ const cycloneArcade = () => {
       } else {
         gameOver();
       }
-      audioLose.play();
+      if (soundOn) audioLose.play();
     }
   };
 
@@ -216,9 +231,11 @@ document.getElementById("start-btn").addEventListener("click", cycloneArcade);
 /** Sharing on Twitter **/
 let shareBtnTwitter = document.getElementById("shareBtnTwitter");
 shareBtnTwitter.addEventListener("click", function () {
-  let message = score / numOfGames ? `my score of ${score}` : "me";
+  let message = score ? `my score of ${score}` : "me";
   makePopupPage(
     "https://twitter.com/intent/tweet?text=" +
       encodeURIComponent(`Try to beat ${message} on ${currentURL}`)
   );
 });
+
+// Neon lights
